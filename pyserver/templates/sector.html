@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Sectors</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="{{url_for('static', filename='/dashboard/lib/owlcarousel/assets/owl.carousel.min.css')}}"
+        rel="stylesheet">
+    <link href="{{url_for('static', filename='/dashboard/lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css')}}"
+        rel="stylesheet" />
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <!-- {{url_for('static', filename='')}} -->
+    <!-- <link href="../static/dashboard/css/bootstrap.min.css" rel="stylesheet"> -->
+    <link href="{{url_for('static', filename='/dashboard/css/bootstrap.min.css')}}" rel="stylesheet">
+    <!-- Template Stylesheet -->
+    <link href="{{url_for('static', filename='/dashboard/css/style.css')}}" rel="stylesheet">
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</head>
+
+<body>
+
+    <div class="container-xxl position-relative bg-white d-flex p-0">
+        <!-- Spinner Start -->
+        <div id="spinner"
+            class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+            <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
+        </div>
+        <!-- Spinner End -->
+
+        <!-- Sidebar Start -->
+        <div class="sidebar pe-4 pb-3">
+            <nav class="navbar bg-light navbar-light">
+                <a href="/" class="navbar-brand mx-4 mb-3">
+                    <h3 class="text-primary">SAHMAS</h3>
+                </a>
+                <div class="d-flex align-items-center ms-4 mb-4">
+                    <div class="position-relative">
+                        <i class="fa fa-user fa-2x"></i>
+                        <div
+                            class="bg-success rounded-circle border border-2 border-white position-absolute end-0 bottom-0 p-1">
+                        </div>
+                    </div>
+                    <div class="ms-3">
+                        <h6 class="mb-0">Niyonkuru Moise</h6>
+                        <span>Admin</span>
+                    </div>
+                </div>
+                <div class="navbar-nav w-100">
+                    <a href="/dashboard" class="nav-item nav-link active"><i
+                            class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
+
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i
+                                class="fa fa-laptop me-2"></i>Elements</a>
+                        <div class="dropdown-menu bg-transparent border-0">
+                            <a href="/safeGraph/Nyarugenge/Access to water" class="dropdown-item">Access to Water</a>
+                            <a href="/safeGraph/Nyarugenge/Access to sanitation" class="dropdown-item">Access to
+                                sanitation</a>
+                            <a href="/safeGraph/Nyarugenge/Access information" class="dropdown-item">Access
+                                information</a>
+                            <a href="/safeGraph/Nyarugenge/Waste removal" class="dropdown-item">Waste removal</a>
+                            <a href="/safeGraph/Nyarugenge/Energy" class="dropdown-item">Energy</a>
+                            <a href="/safeGraph/Nyarugenge/Security of tenure" class="dropdown-item">Security of
+                                tenure</a>
+                            <a href="/safeGraph/Nyarugenge/Accessibility" class="dropdown-item">Accessibility</a>
+                        </div>
+                    </div>
+                    <a href="widget.html" class="nav-item nav-link"><i class="fa fa-th me-2"></i>Dataset</a>
+                    <a href="form.html" class="nav-item nav-link"><i class="fa fa-upload me-2"></i>Upload File</a>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i
+                                class="fa fa-table me-2"></i>Manage</a>
+                        <div class="dropdown-menu  bg-transparent border-0">
+                            <a href="../static/dashboard/user.html" class="nav-item nav-link">Users</a>
+                            <a href="../static/dashboard/roles.html" class="nav-item nav-link">Roles</a>
+                        </div>
+                    </div>
+                    <a href="chart.html" class="nav-item nav-link"><i class="fa fa-chart-bar me-2"></i>View Charts</a>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i
+                                class="far fa-file-alt me-2"></i>More</a>
+                        <div class="dropdown-menu bg-transparent border-0">
+                            <a href="signin.html" class="dropdown-item">Sign In</a>
+                            <a href="signup.html" class="dropdown-item">Sign Up</a>
+                            <a href="404.html" class="dropdown-item">404 Error</a>
+                            <a href="blank.html" class="dropdown-item">Blank Page</a>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+        <!-- Sidebar End -->
+
+
+        <!-- Content Start -->
+        <div class="content">
+            <nav class="navbar navbar-expand bg-light navbar-light sticky-top px-4 py-0">
+                <a href="index.html" class="navbar-brand d-flex d-lg-none me-4">
+                    <h2 class="text-primary mb-0"><i class="fa fa-hashtag"></i></h2>
+                </a>
+                <a href="#" class="sidebar-toggler flex-shrink-0">
+                    <i class="fa fa-bars"></i>
+                </a>
+                <form class="d-none d-md-flex ms-4">
+                    <input class="form-control border-0" type="search" placeholder="Search">
+                </form>
+                <div class="navbar-nav align-items-center ms-auto">
+
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
+                            <i class="fa fa-user"></i>
+                            <span class="d-none d-lg-inline-flex">Niyonkuru Moise</span>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
+                            <a href="#" class="dropdown-item">My Profile</a>
+                            <a href="#" class="dropdown-item">Settings</a>
+                            <a href="#" class="dropdown-item">Log Out</a>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+            <!-- Navbar End -->
+            <div class="container-fluid pt-4 px-4">
+                <div class="row g-4">
+                    <div class="col-sm-12 col-xl-6">
+                        <div class="bg-light rounded h-100 p-4">
+                            <div class="d-flex align-items-center justify-content-between mb-4">
+                                <!-- <h6 class="mb-0">Housing: Bar Graph</h6> -->
+                                <h5 class="mb-0">Ubudehe</h5>
+                                <!-- <a href="">Show All</a> -->
+                                <form id="chooseGraph">
+                                    <label for="lang">type</label>
+                                    <select class="btn btn-secondary" name="graphType" id="graphType">
+                                        <option value="pie">pie</option>
+                                        <option value="line">line</option>
+                                        <option value="bar">bar</option>
+                                    </select>
+                                    <input class="btn btn-secondary" type="submit" value="Change" />
+                                </form>
+                            </div>
+                            <canvas style="margin: auto;"  id="lineChart" width="450" height="300"></canvas>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-xl-6">
+                        <div class="bg-light rounded h-100 p-4">
+                            <h6 class="mb-4">Ubudehe table(%)</h6>
+                            <table class="table table-borderless">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">#</th>
+                                        <th scope="col">Icyiciro</th>
+                                        <th scope="col">safe and affordable</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% set var = 1 %}
+                                        {% for u in labels%}
+                                        
+                                        <tr>
+                                            <th scope="row">{{ loop.index }}</th>
+                                            <td>{{u|safe}}</td>
+                                            <td>{{values[loop.index-1]|safe}}</td>
+                                        </tr>
+                                        {% set var = var+1 %}
+                                        {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Table Start -->
+            <div class="container-fluid pt-4 px-4" id="userContainer">
+                <div class="row g-4">
+
+                    <div class="container-fluid pt-4 px-4">
+                        <div class="bg-light text-center rounded p-4">
+                            <div class="d-flex align-items-center justify-content-between mb-4">
+                                <h6 class="mb-0">Sectors</h6>
+                                <a href="">Show All</a>
+                            </div>
+                            <div class="table-responsive">
+                                <table class="table text-start align-middle table-bordered table-hover mb-0">
+                                    <thead>
+                                        <tr id="sectorHead" class="text-dark">
+                                            <!-- <th scope="col"><input class="form-check-input" type="checkbox"></th>
+                                            <th scope="col">Sector</th>
+                                            <th scope="col">Access to water</th>
+                                            <th scope="col">Access to sanitation</th>
+                                            <th scope="col">Access information</th>
+                                            <th scope="col">Security of tenure</th>
+                                            <th scope="col">Accessibility</th>
+                                            <th scope="col">Affordability</th> -->
+                                        </tr>
+                                    </thead>
+                                    <tbody id="sectorRow">
+                                        <!-- <tr>
+                                            <td>Gatenga</td>
+                                            <td>45</td>
+                                            <td>45</td>
+                                            <td>45</td>
+                                            <td>45</td>
+                                            <td>45</td>
+                                            <td>45</td>
+                                            <td>45</td>
+                                        </tr> -->
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <!-- Footer Start -->
+                    <div class="container-fluid pt-4 px-4">
+                        <div class="bg-light rounded-top p-4">
+                            <div class="row">
+                                <div class="col-12 col-sm-6 text-center text-sm-start">
+                                    &copy; <a href="#">Your Site Name</a>, All Right Reserved.
+                                </div>
+                                <div class="col-12 col-sm-6 text-center text-sm-end">
+                                    <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
+                                    Designed By <a href="https://htmlcodex.com">HTML Codex</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Footer End -->
+                </div>
+                <!-- Content End -->
+
+
+                <!-- Back to Top -->
+                <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+            </div>
+
+            <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+            <script src="{{url_for('static', filename='/dashboard/lib/chart/chart.min.js')}}"></script>
+            <script src="{{url_for('static', filename='/dashboard/lib/easing/easing.min.js')}}"></script>
+            <script src="{{url_for('static', filename='/dashboard/lib/waypoints/waypoints.min.js')}}"></script>
+            <script src="{{url_for('static', filename='/dashboard/lib/owlcarousel/owl.carousel.min.js')}}"></script>
+            <script src="{{url_for('static', filename='/dashboard/lib/tempusdominus/js/moment.min.js')}}"></script>
+            <script
+                src="{{url_for('static', filename='/dashboard/lib/tempusdominus/js/moment-timezone.min.js')}}"></script>
+            <script
+                src="{{url_for('static', filename='/dashboard/lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js')}}"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.min.js"
+                integrity="sha512-QSkVNOCYLtj73J4hbmVoOV6KVZuMluZlioC+trLpewV8qMjsWqlIQvkn1KGX2StWvPMdWGBqim1xlC8krl1EKQ=="
+                crossorigin="anonymous" referrerpolicy="no-referrer">
+
+                </script>
+
+
+            <script src="{{url_for('static', filename='/dashboard/js/main.js')}}"></script>
+
+            <script>
+                obj = {{ secArray | safe }}
+                var userRow = document.getElementById('sectorRow')
+                var sectorHead = document.getElementById('sectorHead')
+                var titles = '<th scope="col">No</th>';
+                var row = ""
+                for (var item in obj[0]) {
+                    titles += '<th scope="col">' + item + '</th>'
+                }
+                obj.forEach((element,index) => {
+                    var data = "";
+                    for (var item in element) {
+                        data += '<td>' + element[item] + '</td>'
+                    }
+                    row += `<tr><td>${index+1}</td>${data}</tr>`;
+                });
+                sectorHead.innerHTML = titles
+                userRow.innerHTML = row
+
+            </script>
+            <script>
+                let currentChart = districtGraph()
+                var chooseGraph = document.getElementById('chooseGraph')
+                chooseGraph.addEventListener('submit', (e) => {
+                    var selectedItem = document.getElementById('graphType').value
+                    e.preventDefault()
+                    currentChart.destroy()
+                    currentChart = districtGraph(selectedItem)
+                })
+
+                function districtGraph(graph = "bar") {
+                    document.getElementById('lineChart').style.border = "solid 1px red"
+                    var ctx = document.getElementById("lineChart").getContext('2d');
+                    var myChart = new Chart(ctx, {
+                        type: graph,
+                        data: {
+                            labels: {{ labels | safe }},
+                datasets: [{
+                    label: 'Population in cities',
+                    data: {{ values | safe}},
+                    backgroundColor: [
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(255, 206, 86, 0.2)',
+                    'rgba(75, 192, 192, 0.2)',
+                    'rgba(153, 102, 255, 0.2)',
+                    'rgba(255, 159, 64, 0.2)'
+                ],
+                    borderColor: [
+                    'rgba(255,99,132,1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(153, 102, 255, 1)',
+                    'rgba(255, 159, 64, 1)'
+                ],
+                    borderWidth: 1,
+                    colorTension : 0.1
+        }]
+            },
+                options: {
+                    responsive: false,
+                        scales: {
+                            y: {
+                                min: 0,
+                                max: 100,
+                            }
+                        // yAxes: [{
+                        //     ticks: {
+                        //         beginAtZero: true
+                        //     }
+                        // }]
+                    }
+                }
+        });
+                return myChart
+    }
+            </script>
+</body>
+
+</html>

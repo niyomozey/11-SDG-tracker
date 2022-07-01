@@ -1,11 +1,474 @@
-{% extends 'base.html'%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="This is official website of safe and affordable housing monitoring and analytics system.">
+    <meta name="author" content="Niyonkuru Moise">
 
-{% block head %}
-<title>Dashboard</title>
-{% endblock%}
+    <!-- OG Meta Tags to improve the way the post looks when you share the page on LinkedIn, Facebook, Google+ -->
+	<meta property="og:site_name" content="" /> <!-- website name -->
+	<meta property="og:site" content="" /> <!-- website link -->
+	<meta property="og:title" content=""/> <!-- title shown in the actual shared post -->
+	<meta property="og:description" content="" /> <!-- description shown in the actual shared post -->
+	<meta property="og:image" content="" /> <!-- image link, make sure it's jpg -->
+	<meta property="og:url" content="" /> <!-- where do you want your post to link to -->
+	<meta property="og:type" content="article" />
 
-{% block body %}
-<h1>
-    graph: 
-</h1>
-{% endblock%}
+    <!-- Website Title -->
+    <title>SAHMAS System</title>
+    
+    <!-- Styles -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,600,700,700i&display=swap" rel="stylesheet">
+    <link href="../static/css/bootstrap.css" rel="stylesheet">
+    <link href="../static/css/fontawesome-all.css" rel="stylesheet">
+    <link href="../static/css/swiper.css" rel="stylesheet">
+	<link href="../static/css/magnific-popup.css" rel="stylesheet">
+	<link href="../static/css/styles.css" rel="stylesheet">
+	
+	<!-- Favicon  -->
+    <link rel="icon" href="../static/images/favicon.png">
+</head>
+<body data-spy="scroll" data-target=".fixed-top">
+    
+    <!-- Preloader -->
+	<div class="spinner-wrapper">
+        <div class="spinner">
+            <div class="bounce1"></div>
+            <div class="bounce2"></div>
+            <div class="bounce3"></div>
+        </div>
+    </div>
+    <!-- end of preloader -->
+    
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
+
+        <!-- Text Logo - Use this if you don't have a graphic logo -->
+        <a class="navbar-brand logo-text page-scroll" href="index.html">SAHMAS</a>
+
+        <!-- Image Logo -->
+        <!-- <a class="navbar-brand logo-image" href="index.html"><img src="../static/images/logo.svg" alt="alternative"></a>  -->
+        
+        <!-- Mobile Menu Toggle Button -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-awesome fas fa-bars"></span>
+            <span class="navbar-toggler-awesome fas fa-times"></span>
+        </button>
+        <!-- end of mobile menu toggle button -->
+
+        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link page-scroll" href="/viewdataset">Datasets <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link page-scroll" href="/login">Data visualization</a>
+                </li>
+
+                <!-- Dropdown Menu -->          
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle page-scroll" href="#date" id="navbarDropdown" role="button" aria-haspopup="true" aria-expanded="false">Districts</a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="safeGraph/Nyarugenge"><span class="item-text">Nyarugenge</span></a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="safeGraph/Gasabo"><span class="item-text">Gasabo</span></a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="safeGraph/Kicukiro"><span class="item-text">Kicukiro</span></a>
+                    </div>
+                </li>
+                <!-- end of dropdown menu -->
+
+                <li class="nav-item">
+                    <a class="nav-link page-scroll" href="#about">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link page-scroll" href="#contact">Contact</a>
+                </li>
+            </ul>
+            <span class="nav-item social-icons">
+                <span class="fa-stack">
+                    <a href="#your-link">
+                        <i class="fas fa-circle fa-stack-2x"></i>
+                        <i class="fab fa-facebook-f fa-stack-1x"></i>
+                    </a>
+                </span>
+                <span class="fa-stack">
+                    <a href="#your-link">
+                        <i class="fas fa-circle fa-stack-2x"></i>
+                        <i class="fab fa-twitter fa-stack-1x"></i>
+                    </a>
+                </span>
+            </span>
+        </div>
+    </nav> <!-- end of navbar -->
+    <!-- end of navigation -->
+
+
+    <!-- Header -->
+    <header id="header" class="header">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="text-container">
+                        <!-- <div class="countdown">
+                            <span id="clock"></span>
+                        </div> -->
+                        <h1>Safe and Affordable Housing Analytics System</h1>
+                        <div class="p-large">
+                            <h1 class="count-up h1 text-center" data-from="10" data-to="13520814" data-time="2000">
+                                0 
+                            </h1>Approximately total population of rwanda 
+                            <!-- <h2> -->
+                                 <span class="style"><span class="count2" data-from="0" data-to="17.43" data-time="2000">0</span> %</span> are living in urban area
+                            <!-- </h2> -->
+                        </div>
+                        <a class="btn-solid-lg page-scroll" href="/login">Login</a>
+                        <a class="btn-outline-lg page-scroll" href="#more">DISCOVER</a>
+                    </div> <!-- end of text-container -->
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+        
+        <!-- Image Slider -->
+        <div class="outer-container">
+            <div class="slider-container">
+                <div class="swiper-container image-slider-1">
+                    <div class="swiper-wrapper">
+                        
+                        <!-- Slide -->
+                        <div class="swiper-slide" >
+                            <img class="img-fluid" src="../static/images/estate1.jpg" alt="Estate in rwanda">
+                        </div>
+                        <!-- end of slide -->
+
+                        <!-- Slide -->
+                        <div class="swiper-slide">
+                            <img class="img-fluid" src="../static/images/estate2.jpg" alt="alternative">
+                        </div>
+                        <!-- end of slide -->
+
+                        <!-- Slide -->
+                        <div class="swiper-slide">
+                            <video loop autoplay>
+                            <source class="img-fluid" type="video/webm" src="../static/images/kigali_footage.webm" alt="alternative">
+                        </video>
+                        </div>
+                        <!-- end of slide -->
+
+                    </div> <!-- end of swiper-wrapper -->
+                    
+                    <!-- Add Arrows -->
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                    <!-- end of add arrows -->
+                    
+                </div> <!-- end of swiper-container -->
+            </div> <!-- end of slider-container -->
+        </div> <!-- end of outer-container -->
+        <!-- end of image slider -->
+
+    </header> 
+
+    <div id="more" class="cards">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h2>Learn more about us</h2>
+                    <p class="p-heading">This system will help to visualize real time update of affordable housing in kigali city</p>
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+            <div class="row">
+                <div class="col-lg-12">
+
+                    <!-- Card -->
+                    <div class="card">
+                        <div class="card-image">
+                            <i class="fas fa-database"></i>
+                        </div>
+                        <div class="card-body">
+                            <h4 class="card-title">Datasets</h4>
+                            <p></p>
+                        </div>
+                    </div>
+                    <!-- end of card -->
+
+                    <!-- Card -->
+                    <div class="card">
+                        <div class="card-image">
+                            <i class="fas fa-chart-bar"></i>
+                        </div>
+                        <div class="card-body">
+                            <h4 class="card-title">Data visualization</h4>
+                            <p></p>
+                        </div>
+                    </div>
+                    <!-- end of card -->
+
+
+                    <!-- Card -->
+                    <div class="card">
+                        <div class="card-image">
+                            <i class="fas fa-newspaper"></i>
+                        </div>
+                        <div class="card-body">
+                            <h4 class="card-title">Guidance</h4>
+                            <p></p>
+                        </div>
+                    </div>
+                    <!-- end of card -->
+
+                    <!-- Card -->
+                    <div class="card">
+                        <div class="card-image">
+                            <i class="fas fa-link"></i>
+                        </div>
+                        <div class="card-body">
+                            <h4 class="card-title">Housing Observation</h4>
+                            <p></p>
+                        </div>
+                    </div>
+                    <!-- end of card -->
+
+                    <!-- Card -->
+                    <div class="card">
+                        <div class="card-image">
+                            <i class="far fa-handshake"></i>
+                        </div>
+                        <div class="card-body">
+                            <h4 class="card-title">Policy</h4>
+                            <p></p>
+                        </div>
+                    </div>
+                    <!-- end of card -->
+
+
+                    <!-- Card -->
+                    <div class="card">
+                        <div class="card-image">
+                            <i class="fas fa-chart-bar"></i>
+                        </div>
+                        <div class="card-body">
+                            <h4 class="card-title">Publications</h4>
+                            <p></p>
+                        </div>
+                    </div>
+                    
+                </div> 
+            </div> 
+        </div> 
+    </div> 
+    <div class="text-center" style="background-color: #fbf9f5;;">
+        <img style="width: 50%;height: 150px;margin: auto;" 
+        src="../static/images/nflag_express.png">
+    </div>
+
+    <!-- Instructor -->
+    <!-- <div id="instructor" class="basic-1">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <img class="img-fluid" src="images/instructor.jpg" alt="alternative">
+                </div> 
+                <div class="col-lg-6">
+                    <div class="text-container">
+                        <h2>I’m Garry Your Trainer</h2>
+                        <p>Hi everybody! I am Garry and I will be your main instructor durnig the SEO training course. I have more than 10 years experience in SEO and I am very passionate about this field. Register for the course and let's meet.</p>
+                        <p>Teaching students all about the beste SEO techniques is something I love to do as a full-time job</p>
+                    </div> 
+                </div> 
+            </div> 
+        </div> 
+    </div>  -->
+    <!-- end of instructor -->
+
+    <!-- Date -->
+    <!-- <div id="date" class="basic-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="text-container">
+                        <h2>December 22nd 2020 at Innovation Hub Space</h2>
+                        <p>Our mission is to help people do better SEO. The team is excited to invite you to the next SEO Training Course session which undoubtedly will provide you with the necessary skills to improve your online presence. Fill out the form to register and we'll contact you in less than 24h</p>
+                        <a class="btn-solid-lg page-scroll" href="#register">REGISTER</a>
+                    </div> 
+                </div> 
+            </div> 
+        </div> 
+    </div>  -->
+    <!-- end of date -->
+
+
+
+
+    <!-- Contact -->
+    <div id="contact" class="form-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="text-container">
+                        <h2>Contact Details</h2>
+                        <p>For any questions about us please get in touch using the contact details below. For any questions use the form.</p>
+                        <h3>Main Office Location</h3>
+                        <ul class="list-unstyled li-space-lg">
+                            <li class="media">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <div class="media-body">gishushu, kigali, KG001st, Rwanda</div>
+                            </li>
+                            <li class="media">
+                                <i class="fas fa-mobile-alt"></i>
+                                <div class="media-body">0780644280, &nbsp;&nbsp;<i class="fas fa-mobile-alt"></i>&nbsp; +250780644280</div>
+                            </li>
+                            <li class="media">
+                                <i class="fas fa-envelope"></i>
+                                <div class="media-body"><a class="light-gray" href="#">niyo@gmail.com</a> <i class="fas fa-globe"></i><a class="light-gray" href="#your-link">www.sahmas.rw</a></div>
+                            </li>
+                        </ul>
+                    </div> <!-- end of text-container -->
+                </div> <!-- end of col -->
+                <div class="col-lg-6">
+
+                    <!-- Contact Form -->
+                    <form id="contactForm" data-toggle="validator" data-focus="false">
+                        <div class="form-group">
+                            <input type="text" class="form-control-input" id="cname" required>
+                            <label class="label-control" for="cname">Name</label>
+                            <div class="help-block with-errors"></div>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" class="form-control-input" id="cemail" required>
+                            <label class="label-control" for="cemail">Email</label>
+                            <div class="help-block with-errors"></div>
+                        </div>
+                        <div class="form-group">
+                            <textarea class="form-control-textarea" id="cmessage" required></textarea>
+                            <label class="label-control" for="cmessage">Your message</label>
+                            <div class="help-block with-errors"></div>
+                        </div>
+                        <div class="form-group checkbox">
+                            <input type="checkbox" id="cterms" value="Agreed-to-Terms" required>I have read and agree to sahmas's stated <a href="privacy-policy.html">Privacy Policy</a> and <a href="terms-conditions.html">Terms Conditions</a> 
+                            <div class="help-block with-errors"></div>
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="form-control-submit-button">SUBMIT</button>
+                        </div>
+                        <div class="form-message">
+                            <div id="cmsgSubmit" class="h3 text-center hidden"></div>
+                        </div>
+                    </form>
+                    <!-- end of contact form -->
+
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </div> <!-- end of form-3 -->
+    <!-- end of contact -->
+
+
+    <!-- Footer -->
+    <div id="footer" class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="footer-col first">
+                        <h5>About System</h5>
+                        <p class="p-small">Let achieve smart and substinable cities</p>
+                    </div>
+                </div> <!-- end of col -->
+                <div class="col-md-3">
+                    <div class="footer-col second">
+                        <h5>Links</h5>
+                        <ul class="list-unstyled li-space-lg p-small">
+                            <li class="media">
+                                <i class="fas fa-square"></i>
+                                <div class="media-body"><a href="terms-conditions.html">Terms & Conditions</a></div>
+                            </li>
+                            <li class="media">
+                                <i class="fas fa-square"></i>
+                                <div class="media-body"><a href="privacy-policy.html">Privacy Policy</a></div>
+                            </li>
+                            <li class="media">
+                                <i class="fas fa-square"></i>
+                                <div class="media-body"><a href="article-details.html">Article Details</a></div>
+                            </li>
+                        </ul>
+                    </div>
+                </div> <!-- end of col -->
+                <div class="col-md-3">
+                    <div class="footer-col third">
+                        <h5>Links</h5>
+                        <ul class="list-unstyled li-space-lg p-small">
+                            <li class="media">
+                                <i class="fas fa-square"></i>
+                                <div class="media-body"><a href="article-details.html">Article Details</a></div>
+                            </li>
+                            <li class="media">
+                                <i class="fas fa-square"></i>
+                                <div class="media-body"><a href="terms-conditions.html">Terms & Conditions</a></div>
+                            </li>
+                            <li class="media">
+                                <i class="fas fa-square"></i>
+                                <div class="media-body"><a href="privacy-policy.html">Privacy Policy</a></div>
+                            </li>
+                        </ul>
+                    </div>
+                </div> <!-- end of col -->
+                <div class="col-md-3">
+                    <div class="footer-col fourth">
+                        <h5>Social Media</h5>
+                        <p class="p-small">For news & updates follow us</p>
+                        <a href="#your-link">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#your-link">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#your-link">
+                            <i class="fab fa-pinterest-p"></i>
+                        </a>
+                        <a href="#your-link">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#your-link">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#your-link">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div> 
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </div> <!-- end of footer -->  
+    <!-- end of footer -->
+
+
+    <!-- Copyright -->
+    <div class="copyright">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <p class="p-small">Copyright © 2020 <a href="https://inovatik.com">Niyonkuru Moise</a> - All rights reserved</p>
+                </div> <!-- end of col -->
+            </div> <!-- enf of row -->
+        </div> <!-- end of container -->
+    </div> <!-- end of copyright --> 
+    <!-- end of copyright -->
+    
+    	
+    <!-- Scripts -->
+    <script src="../static/js/jquery.min.js"></script> <!-- jQuery for Bootstrap's JavaScript plugins -->
+    <script src="../static/js/popper.min.js"></script> <!-- Popper tooltip library for Bootstrap -->
+    <script src="../static/js/bootstrap.min.js"></script> <!-- Bootstrap framework -->
+    <script src="../static/js/jquery.easing.min.js"></script> <!-- jQuery Easing for smooth scrolling between anchors -->
+    <script src="../static/js/jquery.countdown.min.js"></script> <!-- The Final Countdown plugin for jQuery -->
+    <script src="../static/js/swiper.min.js"></script> <!-- Swiper for image and text sliders -->
+    <script src="../static/js/jquery.magnific-popup.js"></script> <!-- Magnific Popup for lightboxes -->
+    <script src="../static/js/validator.min.js"></script> <!-- Validator.js - Bootstrap plugin that validates forms -->
+    <script src="../static/js/scripts.js"></script> <!-- Custom scripts -->
+    <script src="../static/js/index.js"></script> <!-- simple dom manipulation -->
+</body>
+</html>

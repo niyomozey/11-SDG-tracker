@@ -20,7 +20,7 @@
     <meta property="og:type" content="article" />
 
     <!-- Website Title -->
-    <title>SAHMAS System</title>
+    <title>Form</title>
 
     <!-- Styles -->
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,600,700,700i&display=swap" rel="stylesheet">
@@ -34,138 +34,258 @@
     <!-- Favicon  -->
     <link rel="icon" href="../static/images/favicon.png">
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <style>
+        label{
+            padding-right: 30px;
+        }
+    </style>
 </head>
 
-<body data-spy="scroll" data-target=".fixed-top">
-    <form style="width: 40%; margin: auto;" method="POST"  action="formvalidation">
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item active">
+              <a href="/" class="navbar-brand mx-4 mb-3">
+                <h3 class="text-primary">SAHMAS</h3>
+              </a>
+            </li>
+            <!-- <li class="nav-item">
+              <a class="nav-link" href="#">Features</a>
+            </li> -->
+          </ul>
+        </div>
+    </nav>
+    <div class="container">
         <div class="row">
+            <div class="col-6 mx-auto"style="border: solid 1px" >
+                <h2 class="py-10 text-center h1">Data collection form</h2>
+                <form method="POST"  action="formvalidation">
+                    <div class="row">
+            
+                        <!-- First Name -->
+                        <div class="input-group col-lg-6 mb-4">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text bg-white px-4 border-md border-right-0">
+                                    <i class="fa fa-user text-muted"></i>
+                                </span>
+                            </div>
+                            <input id="firstName" type="text" name="firstname" placeholder="First Name" class="form-control bg-white border-left-0 border-md">
+                        </div>
+            
+                        <!-- Last Name -->
+                        <div class="input-group col-lg-6 mb-4">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text bg-white px-4 border-md border-right-0">
+                                    <i class="fa fa-user text-muted"></i>
+                                </span>
+                            </div>
+                            <input id="lastName" type="text" name="lastname" placeholder="Last Name" class="form-control bg-white border-left-0 border-md">
+                        </div>
+                    </div>
+                    <!-- <div class="row"> -->
+                        <!-- First Name -->
+                        <div class="form-group">
+                            <label for="exampleInputPassword1">Gender</label>
+                            <!-- <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password"> -->
+                            <select class="form-control" name="gender">
+                                <option>MALE</option>
+                                <option>FEMALE</option>
+                            </select>
+                        </div>
+                    <!-- </div> -->
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">National Id</label>
+                        <input type="text"name="nationalId"  id="nationalId"  class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                            placeholder="Enter nationalId">
+                    </div>
+                    <!-- Select district , sector , cell -->
+                    <div class="form-group">
+                        <label for="exampleInputPassword1">District</label>
+                        <select id="district" name="district" class="form-control">
+                            <option>Gasabo</option>
+                            <option>Kicukiro</option>
+                            <option>Nyarugenge</option>
+                        </select>
+                    </div>
+                    <div class="row">
+                        <div class="col-4 form-group">
+                            <label for="exampleInputPassword1">Sector</label>
+                            <select id="sector"  name="sector" class="form-control">
+                                <!-- <option>Male</option>
+                                <option>Female</option> -->
+                            </select>
+                        </div>
+                        <div class="col-4 form-group">
+                            <label for="exampleInputPassword1">Cell</label>
+                            <select name="cell" id="cell" class="form-control">
+                                <!-- <option>Male</option>
+                                <option>Female</option> -->
+                            </select>
+                        </div>
+                        <div class="col-4 form-group">
+                            <label for="exampleInputPassword1">Village</label>
+                            <select id="village" name="village" class="form-control">
+                                <!-- <option>Male</option>
+                                <option>Female</option> -->
+                            </select>
+                        </div>
+                    </div>
+                    <!-- icyiciro cyubudehe -->
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Ubudehe</label>
+                        <select class="form-control" name="ubudehe">
+                            <option>U1</option>
+                            <option>U2</option>
+                            <option>U3</option>
+                            <option>U4</option>
+                        </select>
+                        <!-- <input type="text" name="ubudehe" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                            placeholder="Enter Wealth Quintile"> -->
+                        <small id="emailHelp" class="form-text text-muted">Wealth Quintile(ubudehe)</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Access to water</label>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="aWater" id="inlineRadio1" value="1">
+                            <label class="form-check-label" for="inlineRadio1">Yes</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="aWater" id="inlineRadio2" value="0">
+                            <label class="form-check-label" for="inlineRadio2">No</label>
+                        </div>
+                        <!-- <input type="text" name="aWater" class="form-control"  aria-describedby="emailHelp"
+                            placeholder="Enter email"> -->
+                        <small id="emailHelp" class="form-text text-muted">
+                            Households whose members have access to
+                            improved water sources (i.e. piped in water into
+                            dwelling, plot or yard; public tap/stand pipe service; protected
+                            spring; rain water collection; bottled water if secondary source
+                            is also improved; bore hole/tube well; and protected dug well)
+                        </small>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Access to sanitation</label>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="sanitation" id="inlineRadio1" value="1">
+                            <label class="form-check-label" for="inlineRadio1">Yes</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="sanitation" id="inlineRadio2" value="0">
+                            <label class="form-check-label" for="inlineRadio2">No</label>
+                        </div>
+                        <!-- <input type="text" name="sanitation" class="form-control" aria-describedby="emailHelp"
+                            placeholder="Enter email"> -->
+                        <small id="emailHelp" class="form-text text-muted">
+                            household members have access to a facility with an excreta
+                             disposal system that hygienically separates human waste from human contact
+                        </small>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Access information</label>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="aInfo" id="inlineRadio1" value="1">
+                            <label class="form-check-label" for="inlineRadio1">Yes</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="aInfo" id="inlineRadio2" value="0">
+                            <label class="form-check-label" for="inlineRadio2">No</label>
+                        </div>
+                        <!-- <input type="text" name="aInfo" class="form-control"  aria-describedby="emailHelp"
+                            placeholder="Enter email"> -->
+                        <small id="emailHelp" class="form-text text-muted">House member's ability to get network</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Waste removal</label>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="wremoval" id="inlineRadio1" value="1">
+                            <label class="form-check-label" for="inlineRadio1">Yes</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="wremoval" id="inlineRadio2" value="0">
+                            <label class="form-check-label" for="inlineRadio2">No</label>
+                        </div>
+                        <!-- <input type="text" name="wremoval" class="form-control" aria-describedby="emailHelp"
+                            placeholder="Enter email"> -->
+                        <small id="emailHelp" class="form-text text-muted">Waste displose dwellings</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Energy</label>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="energy" id="inlineRadio1" value="1">
+                            <label class="form-check-label" for="inlineRadio1">Yes</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="energy" id="inlineRadio2" value="0">
+                            <label class="form-check-label" for="inlineRadio2">No</label>
+                        </div>
+                        <!-- <input type="text" name="energy" class="form-control" aria-describedby="emailHelp"
+                            placeholder="Enter email"> -->
+                        <small id="emailHelp" class="form-text text-muted">
+                            Access to sources of energy used in cooking, 
+                            heating or lighting such as : electricity, natural gas, 
+                            heating oil, kerosene
+                        </small>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Security of tenure</label>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="security" id="inlineRadio1" value="1">
+                            <label class="form-check-label" for="inlineRadio1">Yes</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="security" id="inlineRadio2" value="0">
+                            <label class="form-check-label" for="inlineRadio2">No</label>
+                        </div>
+                        <!-- <input type="text" name="security" class="form-control" aria-describedby="emailHelp"
+                            placeholder="Enter email"> -->
+                        <small id="emailHelp" class="form-text text-muted">
+                            A tenant to continue to occupy a dwelling or site unless the 
+                            landlord obtains a court order for possession of the property or 
+                            termination of the tenancy agreement
+                        </small>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Accessibility</label>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="access" id="inlineRadio1" value="1">
+                            <label class="form-check-label" for="inlineRadio1">Yes</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="access" id="inlineRadio2" value="0">
+                            <label class="form-check-label" for="inlineRadio2">No</label>
+                        </div>
+                        <!-- <input type="text" name="access" class="form-control" aria-describedby="emailHelp"
+                            placeholder="Enter Accessibility"> -->
+                        <small id="emailHelp" class="form-text text-muted">Transportation around householder</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1 pr-2" style="padding-right: 30px;">Affordability</label>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="affordability" id="inlineRadio1" value="1">
+                            <label class="form-check-label" for="inlineRadio1">Yes</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="affordability" id="inlineRadio2" value="0">
+                            <label class="form-check-label" for="inlineRadio2">No</label>
+                        </div>
+                        <!-- <input type="text" name="affordability" class="form-control" aria-describedby="emailHelp"
+                            placeholder="Enter email"> -->
+                        <small id="emailHelp" class="form-text text-muted">
+                             housing is not adequate if its cost threatens or compromises the
+                              occupants’ enjoyment of other human rights. households with net monthly expenditure on
+                              housing exceeding 30% of the total monthly income of the
+                              household
+                        </small>
+                    </div>
+                    <button type="submit" class="mx-auto btn btn-outline-primary active">Submit</button>
+                </form>
 
-            <!-- First Name -->
-            <div class="input-group col-lg-6 mb-4">
-                <div class="input-group-prepend">
-                    <span class="input-group-text bg-white px-4 border-md border-right-0">
-                        <i class="fa fa-user text-muted"></i>
-                    </span>
-                </div>
-                <input id="firstName" type="text" name="firstname" placeholder="First Name" class="form-control bg-white border-left-0 border-md">
-            </div>
-
-            <!-- Last Name -->
-            <div class="input-group col-lg-6 mb-4">
-                <div class="input-group-prepend">
-                    <span class="input-group-text bg-white px-4 border-md border-right-0">
-                        <i class="fa fa-user text-muted"></i>
-                    </span>
-                </div>
-                <input id="lastName" type="text" name="lastname" placeholder="Last Name" class="form-control bg-white border-left-0 border-md">
             </div>
         </div>
-        <!-- <div class="row"> -->
-            <!-- First Name -->
-            <div class="form-group">
-                <label for="exampleInputPassword1">Gender</label>
-                <!-- <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password"> -->
-                <select class="form-control" name="gender">
-                    <option>Male</option>
-                    <option>Female</option>
-                </select>
-            </div>
-        <!-- </div> -->
-        <div class="form-group">
-            <label for="exampleInputEmail1">National Id</label>
-            <input type="text"name="nationalId"  id="nationalId"  class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-                placeholder="Enter nationalId">
-            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-        </div>
-        <!-- Select district , sector , cell -->
-        <div class="form-group">
-            <label for="exampleInputPassword1">District</label>
-            <select id="district" name="district" class="form-control">
-                <option>Gasabo</option>
-                <option>Kicukiro</option>
-                <option>Nyarugenge</option>
-            </select>
-        </div>
-        <div class="row ">
-            <div class="form-group">
-                <label for="exampleInputPassword1">Sector</label>
-                <select id="sector"  name="sector" class="form-control">
-                    <!-- <option>Male</option>
-                    <option>Female</option> -->
-                </select>
-            </div>
-            <div class="form-group">
-                <label for="exampleInputPassword1">Cell</label>
-                <select name="cell" id="cell" class="form-control">
-                    <!-- <option>Male</option>
-                    <option>Female</option> -->
-                </select>
-            </div>
-            <div class="form-group">
-                <label for="exampleInputPassword1">Village</label>
-                <select id="village" name="village" class="form-control">
-                    <!-- <option>Male</option>
-                    <option>Female</option> -->
-                </select>
-            </div>
-        </div>
-        <!-- icyiciro cyubudehe -->
-        <div class="form-group">
-            <label for="exampleInputEmail1">Ubudehe</label>
-            <input type="text" name="ubudehe" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-                placeholder="Enter Wealth Quintile">
-            <small id="emailHelp" class="form-text text-muted">Wealth Quintile(ubudehe)</small>
-        </div>
-        <div class="form-group">
-            <label for="exampleInputEmail1">Access to water</label>
-            <input type="text" name="aWater" class="form-control"  aria-describedby="emailHelp"
-                placeholder="Enter email">
-            <small id="emailHelp" class="form-text text-muted">Accessibility to clean water</small>
-        </div>
-        <div class="form-group">
-            <label for="exampleInputEmail1">Access to sanitation</label>
-            <input type="text" name="sanitation" class="form-control" aria-describedby="emailHelp"
-                placeholder="Enter email">
-            <small id="emailHelp" class="form-text text-muted">Access to sanitation</small>
-        </div>
-        <div class="form-group">
-            <label for="exampleInputEmail1">Access information</label>
-            <input type="text" name="aInfo" class="form-control"  aria-describedby="emailHelp"
-                placeholder="Enter email">
-            <small id="emailHelp" class="form-text text-muted">How much are you able to get fully network</small>
-        </div>
-        <div class="form-group">
-            <label for="exampleInputEmail1">Waste removal</label>
-            <input type="text" name="wremoval" class="form-control" aria-describedby="emailHelp"
-                placeholder="Enter email">
-            <small id="emailHelp" class="form-text text-muted">Waste removal</small>
-        </div>
-        <div class="form-group">
-            <label for="exampleInputEmail1">Energy</label>
-            <input type="text" name="energy" class="form-control" aria-describedby="emailHelp"
-                placeholder="Enter email">
-            <small id="emailHelp" class="form-text text-muted">Energy</small>
-        </div>
-        <div class="form-group">
-            <label for="exampleInputEmail1">Security of tenure</label>
-            <input type="text" name="security" class="form-control" aria-describedby="emailHelp"
-                placeholder="Enter email">
-            <small id="emailHelp" class="form-text text-muted">Security of tenure</small>
-        </div>
-        <div class="form-group">
-            <label for="exampleInputEmail1">Accessibility</label>
-            <input type="text" name="access" class="form-control" aria-describedby="emailHelp"
-                placeholder="Enter Accessibility">
-            <small id="emailHelp" class="form-text text-muted">Energy</small>
-        </div>
-        <div class="form-group">
-            <label for="exampleInputEmail1">Affordability</label>
-            <input type="text" name="affordability" class="form-control" aria-describedby="emailHelp"
-                placeholder="Enter email">
-            <small id="emailHelp" class="form-text text-muted">How do you rate transportation besides</small>
-        </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
-    </form>
+    
+        <!-- <a href="#" class="btn btn-lg btn-primary back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a> -->
+    </div>
 
 
     <!-- Scripts -->
@@ -175,10 +295,9 @@
     <script src="../static/js/jquery.easing.min.js"></script>
     <!-- jQuery Easing for smooth scrolling between anchors -->
     <script src="../static/js/jquery.countdown.min.js"></script> <!-- The Final Countdown plugin for jQuery -->
-    <script src="../static/js/swiper.min.js"></script> <!-- Swiper for image and text sliders -->
     <script src="../static/js/jquery.magnific-popup.js"></script> <!-- Magnific Popup for lightboxes -->
     <script src="../static/js/validator.min.js"></script> <!-- Validator.js - Bootstrap plugin that validates forms -->
-    <script src="../static/js/scripts.js"></script> <!-- Custom scripts -->
+    <!-- <script src="../static/js/scripts.js"></script> -->
     <script src="../static/js/index.js"></script> <!-- simple dom manipulation -->
     <script src="../static/js/dtForm.js"></script>
     <!-- import axios -->

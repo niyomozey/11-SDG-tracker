@@ -1,3 +1,4 @@
+// console.log('Hello World',name)
 (function ($) {
     "use strict";
 
@@ -64,26 +65,33 @@
     var myChart1 = new Chart(ctx1, {
         type: "bar",
         data: {
-            labels: ["2016", "2017", "2018", "2019", "2020", "2021", "2022"],
+            labels:districts,
+            // labels: ["Nyarugenge","Gasabo","Kicukiro"],
+            // labels: ["2016", "2017", "2018", "2019", "2020", "2021", "2022"],
             datasets: [{
-                    label: "USA",
-                    data: [15, 30, 55, 65, 60, 80, 95],
-                    backgroundColor: "rgba(0, 156, 255, .7)"
+                    label: "No",
+                    // data: [15, 30, 55, 65, 60, 80, 95],
+                    data: noPop,
+                    // backgroundColor: "rgba(0, 156, 255, .7)"
+                    backgroundColor: "rgba(248, 215, 96, 1)"
                 },
                 {
-                    label: "UK",
-                    data: [8, 35, 40, 60, 70, 55, 75],
-                    backgroundColor: "rgba(0, 156, 255, .5)"
-                },
-                {
-                    label: "AU",
-                    data: [12, 25, 45, 55, 65, 70, 60],
-                    backgroundColor: "rgba(0, 156, 255, .3)"
+                    label: "Yes",
+                    // data: [8, 35, 40, 60, 70, 55, 75],
+                    data: yesPop,
+                    // backgroundColor: "rgba(0, 156, 255, .5)"
+                    backgroundColor: "rgba(117, 189, 126, 1)"
                 }
             ]
             },
         options: {
-            responsive: true
+            responsive: true,
+            scales: {
+                y: {
+                     beginAtZero: true,
+                      max: 100
+                  }
+              }
         }
     });
 
@@ -93,23 +101,35 @@
     var myChart2 = new Chart(ctx2, {
         type: "line",
         data: {
-            labels: ["2016", "2017", "2018", "2019", "2020", "2021", "2022"],
+            
+            labels: districts,
+            // labels: ["2016", "2017", "2018", "2019", "2020", "2021", "2022"],
+            // labels: ["","Nyarugenge","Gasabo","Kicukiro"],
             datasets: [{
-                    label: "Salse",
-                    data: [15, 30, 55, 45, 70, 65, 85],
+                    label: "No",
+                    // data: [15, 30, 55, 45, 70, 65, 85],
+                    data: noPop,
                     backgroundColor: "rgba(0, 156, 255, .5)",
                     fill: true
                 },
                 {
-                    label: "Revenue",
-                    data: [99, 135, 170, 130, 190, 180, 270],
-                    backgroundColor: "rgba(0, 156, 255, .3)",
+                    label: "Yes",
+                    // data: [99, 135, 170, 130, 190, 180, 270],
+                    data: yesPop,
+                    // backgroundColor: "rgba(0, 156, 255, .3)",
+                    backgroundColor: "rgba(117, 189, 126, 1)",
                     fill: true
                 }
             ]
             },
         options: {
-            responsive: true
+            responsive: true,
+            scales: {
+                y: {
+                     beginAtZero: true,
+                      max: 100
+                  }
+              }
         }
     });
     
