@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- SEO Meta Tags -->
+    <meta name="description"
+        content="This is official website of safe and affordable housing monitoring and analytics system.">
+    <meta name="author" content="Niyonkuru Moise">
+
+    <!-- OG Meta Tags to improve the way the post looks when you share the page on LinkedIn, Facebook, Google+ -->
+    <meta property="og:site_name" content="" /> <!-- website name -->
+    <meta property="og:site" content="" /> <!-- website link -->
+    <meta property="og:title" content="" /> <!-- title shown in the actual shared post -->
+    <meta property="og:description" content="" /> <!-- description shown in the actual shared post -->
+    <meta property="og:image" content="" /> <!-- image link, make sure it's jpg -->
+    <meta property="og:url" content="" /> <!-- where do you want your post to link to -->
+    <meta property="og:type" content="article" />
+
+    <!-- Website Title -->
+    <title>SAHMAS System</title>
+
+    <!-- Styles -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,600,700,700i&display=swap" rel="stylesheet">
+    <link href="../static/css/bootstrap.css" rel="stylesheet">
+    <link href="../static/css/fontawesome-all.css" rel="stylesheet">
+    <link href="../static/css/swiper.css" rel="stylesheet">
+    <link href="../static/css/magnific-popup.css" rel="stylesheet">
+    <!-- insert tailwind -->
+    <!-- <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet"> -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Favicon  -->
+    <link rel="icon" href="../static/images/favicon.png">
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</head>
+
+<body data-spy="scroll" data-target=".fixed-top">
+    <form style="width: 40%; margin: auto;" method="POST"  action="formvalidation">
+        <div class="row">
+
+            <!-- First Name -->
+            <div class="input-group col-lg-6 mb-4">
+                <div class="input-group-prepend">
+                    <span class="input-group-text bg-white px-4 border-md border-right-0">
+                        <i class="fa fa-user text-muted"></i>
+                    </span>
+                </div>
+                <input id="firstName" type="text" name="firstname" placeholder="First Name" class="form-control bg-white border-left-0 border-md">
+            </div>
+
+            <!-- Last Name -->
+            <div class="input-group col-lg-6 mb-4">
+                <div class="input-group-prepend">
+                    <span class="input-group-text bg-white px-4 border-md border-right-0">
+                        <i class="fa fa-user text-muted"></i>
+                    </span>
+                </div>
+                <input id="lastName" type="text" name="lastname" placeholder="Last Name" class="form-control bg-white border-left-0 border-md">
+            </div>
+        </div>
+        <!-- <div class="row"> -->
+            <!-- First Name -->
+            <div class="form-group">
+                <label for="exampleInputPassword1">Gender</label>
+                <!-- <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password"> -->
+                <select class="form-control" name="gender">
+                    <option>Male</option>
+                    <option>Female</option>
+                </select>
+            </div>
+        <!-- </div> -->
+        <div class="form-group">
+            <label for="exampleInputEmail1">National Id</label>
+            <input type="text"name="nationalId"  id="nationalId"  class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                placeholder="Enter nationalId">
+            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+        </div>
+        <!-- Select district , sector , cell -->
+        <div class="form-group">
+            <label for="exampleInputPassword1">District</label>
+            <select id="district" name="district" class="form-control">
+                <option>Gasabo</option>
+                <option>Kicukiro</option>
+                <option>Nyarugenge</option>
+            </select>
+        </div>
+        <div class="row ">
+            <div class="form-group">
+                <label for="exampleInputPassword1">Sector</label>
+                <select id="sector"  name="sector" class="form-control">
+                    <!-- <option>Male</option>
+                    <option>Female</option> -->
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1">Cell</label>
+                <select name="cell" id="cell" class="form-control">
+                    <!-- <option>Male</option>
+                    <option>Female</option> -->
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1">Village</label>
+                <select id="village" name="village" class="form-control">
+                    <!-- <option>Male</option>
+                    <option>Female</option> -->
+                </select>
+            </div>
+        </div>
+        <!-- icyiciro cyubudehe -->
+        <div class="form-group">
+            <label for="exampleInputEmail1">Ubudehe</label>
+            <input type="text" name="ubudehe" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                placeholder="Enter Wealth Quintile">
+            <small id="emailHelp" class="form-text text-muted">Wealth Quintile(ubudehe)</small>
+        </div>
+        <div class="form-group">
+            <label for="exampleInputEmail1">Access to water</label>
+            <input type="text" name="aWater" class="form-control"  aria-describedby="emailHelp"
+                placeholder="Enter email">
+            <small id="emailHelp" class="form-text text-muted">Accessibility to clean water</small>
+        </div>
+        <div class="form-group">
+            <label for="exampleInputEmail1">Access to sanitation</label>
+            <input type="text" name="sanitation" class="form-control" aria-describedby="emailHelp"
+                placeholder="Enter email">
+            <small id="emailHelp" class="form-text text-muted">Access to sanitation</small>
+        </div>
+        <div class="form-group">
+            <label for="exampleInputEmail1">Access information</label>
+            <input type="text" name="aInfo" class="form-control"  aria-describedby="emailHelp"
+                placeholder="Enter email">
+            <small id="emailHelp" class="form-text text-muted">How much are you able to get fully network</small>
+        </div>
+        <div class="form-group">
+            <label for="exampleInputEmail1">Waste removal</label>
+            <input type="text" name="wremoval" class="form-control" aria-describedby="emailHelp"
+                placeholder="Enter email">
+            <small id="emailHelp" class="form-text text-muted">Waste removal</small>
+        </div>
+        <div class="form-group">
+            <label for="exampleInputEmail1">Energy</label>
+            <input type="text" name="energy" class="form-control" aria-describedby="emailHelp"
+                placeholder="Enter email">
+            <small id="emailHelp" class="form-text text-muted">Energy</small>
+        </div>
+        <div class="form-group">
+            <label for="exampleInputEmail1">Security of tenure</label>
+            <input type="text" name="security" class="form-control" aria-describedby="emailHelp"
+                placeholder="Enter email">
+            <small id="emailHelp" class="form-text text-muted">Security of tenure</small>
+        </div>
+        <div class="form-group">
+            <label for="exampleInputEmail1">Accessibility</label>
+            <input type="text" name="access" class="form-control" aria-describedby="emailHelp"
+                placeholder="Enter Accessibility">
+            <small id="emailHelp" class="form-text text-muted">Energy</small>
+        </div>
+        <div class="form-group">
+            <label for="exampleInputEmail1">Affordability</label>
+            <input type="text" name="affordability" class="form-control" aria-describedby="emailHelp"
+                placeholder="Enter email">
+            <small id="emailHelp" class="form-text text-muted">How do you rate transportation besides</small>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+
+
+    <!-- Scripts -->
+    <script src="../static/js/jquery.min.js"></script> <!-- jQuery for Bootstrap's JavaScript plugins -->
+    <script src="../static/js/popper.min.js"></script> <!-- Popper tooltip library for Bootstrap -->
+    <script src="../static/js/bootstrap.min.js"></script> <!-- Bootstrap framework -->
+    <script src="../static/js/jquery.easing.min.js"></script>
+    <!-- jQuery Easing for smooth scrolling between anchors -->
+    <script src="../static/js/jquery.countdown.min.js"></script> <!-- The Final Countdown plugin for jQuery -->
+    <script src="../static/js/swiper.min.js"></script> <!-- Swiper for image and text sliders -->
+    <script src="../static/js/jquery.magnific-popup.js"></script> <!-- Magnific Popup for lightboxes -->
+    <script src="../static/js/validator.min.js"></script> <!-- Validator.js - Bootstrap plugin that validates forms -->
+    <script src="../static/js/scripts.js"></script> <!-- Custom scripts -->
+    <script src="../static/js/index.js"></script> <!-- simple dom manipulation -->
+    <script src="../static/js/dtForm.js"></script>
+    <!-- import axios -->
+    
+</body>
+
+</html>

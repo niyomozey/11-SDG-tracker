@@ -1,0 +1,37 @@
+{
+  "name": "sahmasystem",
+  "version": "1.0.0",
+  "description": "Safe and affordable housing monitoring and analytics system",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon --exec babel-node ./src/app.js",
+    "start": "npm run build && node ./build/app.js",
+    "clean": "rm -rf build && mkdir build",
+    "build-babel": "babel -d ./build ./src/app.js -s",
+    "build": "npm run clean && npm run build-babel"
+  },
+  "author": "Niyonkuru Moise",
+  "license": "ISC",
+  "dependencies": {
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "d3": "^7.3.0",
+    "dotenv": "^16.0.0",
+    "express": "^4.17.3",
+    "nodemon": "^2.0.15"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.17.6",
+    "@babel/core": "^7.17.5",
+    "@babel/node": "^7.16.8",
+    "@babel/plugin-transform-runtime": "^7.17.0",
+    "@babel/polyfill": "^7.12.1",
+    "@babel/preset-env": "^7.16.11",
+    "@babel/runtime": "^7.17.2",
+    "@typescript-eslint/eslint-plugin": "^5.13.0",
+    "@typescript-eslint/parser": "^5.13.0",
+    "eslint": "^8.10.0",
+    "eslint-config-google": "^0.14.0",
+    "eslint-plugin-react": "^7.29.2"
+  }
+}
